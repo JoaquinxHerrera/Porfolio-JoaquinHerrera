@@ -143,7 +143,12 @@ const navItems = [
     
     const links = document.querySelectorAll('.link');
     links.forEach(link => {
-        link.addEventListener('click', toggleMenu);
+        link.addEventListener('click', function(event) {
+            const screenWidth = window.innerWidth;
+            if (screenWidth <= 767) {
+                toggleMenu(); 
+            }
+        });
     });
     
     window.addEventListener('resize', closeMenuOnResize);
