@@ -1,0 +1,62 @@
+---
+import Pdf from "../icons/Pdf.astro";
+
+const ACHIEVEMENTS = [
+    {
+        title:'CineSafari - Watch all your favourite movies online',
+        description: 'Your cinematic adventure awaits! Explore a curated collection of top-quality movies from all genres, available for streaming anytime, anywhere. ',
+        link:'https://cine-safari.vercel.app/',
+        image: '/achievements/desarrolloWeb.webp',
+        
+    },
+    {
+        title:'CineSafari - Watch all your favourite movies online',
+        description: 'Your cinematic adventure awaits! Explore a curated collection of top-quality movies from all genres, available for streaming anytime, anywhere. ',
+        link:'https://cine-safari.vercel.app/',
+        image: '/achievements/JavaScript.webp',
+        
+    },
+    {
+        title:'CineSafari - Watch all your favourite movies online',
+        description: 'Your cinematic adventure awaits! Explore a curated collection of top-quality movies from all genres, available for streaming anytime, anywhere. ',
+        link:'https://cine-safari.vercel.app/',
+        image: '/achievements/React.webp',
+        
+    },
+    {
+        title:'CineSafari - Watch all your favourite movies online',
+        description: 'Your cinematic adventure awaits! Explore a curated collection of top-quality movies from all genres, available for streaming anytime, anywhere. ',
+        link:'https://cine-safari.vercel.app/',
+        image: '/achievements/FrontEnd.webp',
+        
+    }
+]
+
+
+---
+
+<div class="grid md:grid-cols-2 sm:grid-cols-1 gap-y-16 gap-x-8">
+    {
+        ACHIEVEMENTS.map(({image, title})=>(
+            <article class="relative group">
+                    <div class="relative overflow-hidden transition duration-500 ease-in-out transform shadow-xl rounded-xl">
+                        <img 
+                        class="object-cover object-top w-full h-56 sm:h-full md:scale-110"
+                        src={image} 
+                        loading="lazy"
+                        alt={`Screenshot of the project ${title}`}
+                        >
+                        <div class="absolute inset-0 bg-black bg-opacity-0 group-hover:bg-opacity-60 transition duration-500 flex items-center justify-center">
+                            <div class="text-white text-center opacity-0 group-hover:opacity-100 transition duration-300">
+                                <a href={image} target="_blank" rel="noopener"class="inline-flex items-center justify-center gap-2 px-3 py-2 space-x-2 text-base text-white transition bg-gray-800 border border-gray-600 focus-visible:ring-yellow-500/80 text-md hover:bg-gray-800 hover:border-gray-900 group max-w-fit rounded-xl hover:text-white focus:outline-none focus-visible:outline-none focus-visible:ring focus-visible:ring-white focus-visible:ring-offset-2 active:bg-black">
+                                    <Pdf/>
+                                    View Certificate
+                                </a>
+                            </div>
+                        </div>
+                    </div>
+                
+            </article>
+        ))
+    }
+</div>

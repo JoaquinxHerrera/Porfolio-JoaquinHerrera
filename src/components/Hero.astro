@@ -1,0 +1,72 @@
+---
+import Html from "../icons/Html.astro";
+import Css from "../icons/Css.astro";
+import LinkedIn from "../icons/LinkedIn.astro";
+import Mail from "../icons/Mail.astro";
+import Badge from "./Badge.astro";
+import SocialPill from "./SocialPill.astro";
+import Javascript from "../icons/Javascript.astro";
+import React from "../icons/React.astro";
+import Tailwind from "../icons/Tailwind.astro";
+import Sass from "../icons/Sass.astro";
+import Mongodb from "../icons/Mongodb.astro";
+import Node from "../icons/Node.astro";
+import Figma from "../icons/Figma.astro";
+import Bootstrap from "../icons/Bootstrap.astro";
+
+---
+
+<div class="max-2-xl mb-24 sm:mt-20 lg:pb-40 lg:mb-40 sm:pt-20 xs-mt md:pt-0 md:mt-0"> 
+    <div class="lg:flex  md:flex-row items-center">
+        <div >
+            <div class="flex gap-2 lg:justify-normal sm:justify-center xs-center">
+                <h1
+                    class="md:text-5xl sm:text-3xl xs-text font-bold tracking-tight text-gray-800  dark:text-white "
+                >
+                    Front-End Developer
+                </h1>
+                <a
+                 href="https://linkedin.com/in/joaquin-herrera-396150183"
+                 target="_blank"
+                 rel="noopener"
+                 class="flex items-center transition md:justify-center md:hover:scale-105"
+                >
+                    <Badge> Open to work</Badge>
+                </a>
+            </div>
+            <p
+                class="my-6 text-xl text-gray-800 dark:[&strong]:text-yellow-500 [&>strong]:font-semibold dark:text-gray-300 lg:w-full lg:text-left sm:text-center xs-center"
+            >
+                Hi, I'm Joaquin Herrera. A passionate Front-End Developer based in Buenos Aires, Argentina📍.
+            </p>
+            <nav class="flex flex-wrap gap-4 mt-8 lg:justify-normal md:justify-center sm:justify-center xs-center">
+                <SocialPill href="mailto:joaquin.xherrera1@gmail.com">
+                    <Mail class="size-4"/>
+                    Contact me
+                </SocialPill>
+                <SocialPill href="https://linkedin.com/in/joaquin-herrera-396150183">
+                    <LinkedIn class="size-4"/>
+                    LinkeIn
+                </SocialPill>
+            </nav>
+        </div>
+        <div class="lg:w-[50%] md:w-full sm:w-full sm:flex sm:justify-center md:flex md:justify-center md:mt-5 sm:mt-5 xs-center xs-mt-2">
+            <img class="rounded-full size-80  object-cover border-2 border-black" src="./profile.webp" alt="profile picture">
+        </div>
+    </div>
+    <div class="flex items-center justify-between font-semibold text-lg lg:w-[67%]  mt-20  py-2 px-3 rounded-md bg-gray-100 border border-gray-300  dark:bg-gray-800 dark:border-gray-600 dark:text-white text-gray-800 lg:mx-0 md:mx-auto sm:w-[95%]  xs-w-full xs-flex-column">
+        <p>Tech Stack <span class="xs-hidden">|</span></p>
+        <div class="flex gap-3">
+            <Html class="size-10 xs-size"/>
+            <Css class="size-10 xs-size"/>
+            <Javascript class="size-10 xs-size"/>
+            <React class="size-10 xs-size"/>
+            <Mongodb class="size-10 xs-size"/>
+            <Node class="size-10 xs-size"/>
+            <Figma class="size-10 xs-size"/>
+            <Bootstrap class="size-10 xs-size"/>
+            <Tailwind class="size-10 xs-size"/>
+        </div> 
+        
+    </div>
+</div>

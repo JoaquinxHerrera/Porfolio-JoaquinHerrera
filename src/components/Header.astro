@@ -1,11 +1,150 @@
-<header class="flex justify-center items-center py-5 w-full xl:w-[1120px] mx-auto">
-    <h1 class="text-2xl font-semibold ">Joaquin.dev</h1>
-    
-    <nav class="flex flex-row gap-x-40 opacity-90">
-        <a href="#home">Home</a>
-        <a href="#experience">Experience</a>
-        <a href="#about">About</a>
-        <a href="#projects">Projects</a>
-        <a href="#contact">Contact</a>
-    </nav>
+---
+import ThemeToggle from "./ThemeToggle.astro";
+const navItems = [
+    {
+        title: 'About me',
+        label: 'about-me',
+        url: '/#about-me',
+    },
+    {
+        title: 'Experience',
+        label: 'experience',
+        url: '/#experience',
+    },
+    {
+        title: 'Projects',
+        label: 'projects',
+        url: '/#projects',
+    },
+    {
+        title: 'Contact',
+        label: 'contact',
+        url: 'mailto:joaquin.xherrera1@gmail.com',
+    },
+]
+
+
+---
+
+<header class="fixed top-0 z-20 flex justify-between md:items-center py-5 px-5 w-full mx-auto bg-white dark:bg-[#1C1F27] shadow " id="header">
+    <a href='/#joaquin.dev' id="logo" class="text-2xl font-semibold ">Joaquin.dev</a>
+
+    <nav class="xs-hidden sm:hidden md:flex  md:gap-x-5 opacity-90 align-right items-end justify-end text-end md:h-auto sm:h-[100vh]  sm:w-[auto] sm:text-center sm:ml-[45%] sm:mt-[30vh] md:m-0 sm:text-2xl md:text-base sm:gap-y-[50px] sm:py-0 xs-nav" id="menu">
+        {
+            navItems.map((link)=>(
+                <a 
+                    class="relative block px-2 py-2 sm:py-7 md:py-2 transition hover:text-yellow-500 dark:hover:text-yellow-400 link xs-a"
+                    aria-label={link.label}
+                    href={link.url}
+                >
+                    {link.title}    
+                </a>
+            ))
+        }
+    </nav> 
+
+    <div class="flex items-center" id="burgerContainer">
+        <button class="md:hidden" id="burgerMenu" >
+            <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
+                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16m-7 6h7"></path>
+              </svg>
+        </button>
+        <button class="md:hidden" id="closeButton" style="display: none;">
+            <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
+                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M6 18L18 6M6 6l12 12"></path>
+            </svg>
+        </button>
+        <ThemeToggle id="themeToggle"/>
+    </div>
 </header>
+
+<style>
+    .menu {
+        display: none;
+        animation-duration: 0.3s; 
+    }
+
+    .menu-open {
+        display: block;
+        animation: slide-in 0.3s ease-out; 
+    }
+
+    @keyframes slide-in {
+        from {
+            transform: translateX(-200%);
+        }
+        to {
+            transform: translateX(0);
+        }
+    }
+
+    .menu-close {
+        animation: slide-out 0.3s ease-out; 
+    }
+
+    @keyframes slide-out {
+        from {
+            transform: translateX(-100%);
+        }
+        to {
+            transform: translateX(-400%);
+        }
+    }
+</style>
+<script>
+
+    let menuOpen = false;
+  
+    function toggleMenu() {
+        menuOpen = !menuOpen;
+        const menu = document.getElementById("menu");
+        const closeButton = document.getElementById("closeButton");
+        const logo = document.getElementById("logo");
+        const burgerIcon = document.getElementById('burgerMenu')
+        const header = document.getElementById('header')      
+        const burgerContainer = document.getElementById('burgerContainer')      
+        
+        if(menuOpen){
+        menu.classList.add('menu-open');
+        closeButton.style.display = 'flex';
+        logo.classList.add('hidden');
+        burgerIcon.classList.add('hidden');
+        header.classList.remove('items-center');
+        menu.classList.remove('sm:hidden');
+        menu.classList.add('md:flex');
+        burgerContainer.classList.add('items-start')
+        burgerContainer.classList.remove('items-center')
+    } else {
+        closeButton.style.display = 'none';
+        logo.classList.remove('hidden');
+        burgerIcon.classList.remove('hidden');
+        header.classList.add('items-center');
+        menu.classList.add('menu-close');
+        burgerContainer.classList.remove('items-start') 
+        setTimeout(() => {
+            menu.classList.remove('menu-open'); 
+            menu.classList.remove('menu-close'); 
+            menu.classList.add('sm:hidden'); 
+        }, 300); 
+    }
+    
+    }
+
+    function closeMenuOnResize() {
+        const menu = document.getElementById("menu");
+        const screenWidth = window.innerWidth;
+        if (menuOpen && screenWidth > 640) { 
+            toggleMenu();
+        }
+    }
+
+    document.getElementById('burgerMenu').addEventListener("click", toggleMenu)
+    document.getElementById('closeButton').addEventListener("click", toggleMenu)
+    
+    const links = document.querySelectorAll('.link');
+    links.forEach(link => {
+        link.addEventListener('click', toggleMenu);
+    });
+    
+    window.addEventListener('resize', closeMenuOnResize);
+</script>
