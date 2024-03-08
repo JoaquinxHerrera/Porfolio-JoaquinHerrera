@@ -102,7 +102,7 @@ const { title, description } = Astro.props;
 			}
 			@media (max-width: 639px) {
 				.xs-text{ 
-					font-size:1.9rem;
+					font-size:2.3rem;
 					padding-top:0.1em;
 				}
 				.xs-center{ 
@@ -130,14 +130,15 @@ const { title, description } = Astro.props;
 					margin: 0 auto;
 				}
 				.xs-w{ 
-					width:80%
+					width:80%;
+					margin:0 auto;
 				}
 				.xs-mt{ 
 					margin-top:9em;
 				}
 				.xs-nav{
 					text-align:center;
-					margin-left:40%;
+					margin-right: auto;
 					height:100vh;
 					margin-top:30vh;
 					font-size:1.5rem;					
@@ -146,6 +147,18 @@ const { title, description } = Astro.props;
 					padding:25px 0;
 				}
 
+				.xs-header{ 
+					width:100vw;
+				}
+
+				.xs-w-img{ 
+					width:90vw;
+					height:40vh;
+					
+				}
+				.xs-gap{ 
+					gap:0
+				}
 
 			}
 			
