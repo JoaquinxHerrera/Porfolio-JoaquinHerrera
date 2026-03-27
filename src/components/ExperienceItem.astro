@@ -1,6 +1,7 @@
 ---
 import LinkInline from "./LinkInline.astro";
-const { title, company, description, link, date } = Astro.props
+// Cambiamos 'link' por 'links' en la extracción de props
+const { title, company, description, links, date } = Astro.props
 ---
 
 <div
@@ -19,29 +20,31 @@ const { title, company, description, link, date } = Astro.props
   </div>
   <div class="relative flex flex-col gap-2 pb-4 text-gray-600 dark:text-gray-300 md:col-span-3">
     {description}
-    {
-      link && (
-        <LinkInline href={link}>
-          Know more{" "}
-          <svg
-            xmlns="http://www.w3.org/2000/svg"
-            class="w-5 icon icon-tabler icon-tabler-chevron-right"
-            width="24"
-            height="24"
-            viewBox="0 0 24 24"
-            stroke-width="2"
-            stroke="currentColor"
-            fill="none"
-            stroke-linecap="round"
-            stroke-linejoin="round"
-          >
-            <>
+    
+    <div class="flex flex-wrap gap-4 mt-2">
+      {
+        // Mapeamos el array de links para crear un botón por cada uno
+        links && links.map((linkItem) => (
+          <LinkInline href={linkItem.url}>
+            {linkItem.label}
+            <svg
+              xmlns="http://www.w3.org/2000/svg"
+              class="w-5 icon icon-tabler icon-tabler-chevron-right"
+              width="24"
+              height="24"
+              viewBox="0 0 24 24"
+              stroke-width="2"
+              stroke="currentColor"
+              fill="none"
+              stroke-linecap="round"
+              stroke-linejoin="round"
+            >
               <path stroke="none" d="M0 0h24v24H0z" fill="none" />
               <path d="M9 6l6 6l-6 6" />
-            </>
-          </svg>
-        </LinkInline>
-      )
-    }
+            </svg>
+          </LinkInline>
+        ))
+      }
+    </div>
   </div>
 </div>
