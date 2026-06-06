@@ -10,6 +10,10 @@ import Vite from '../icons/Vite.astro'
 import Express from '../icons/Express.astro'
 import Mongodb from '../icons/Mongodb.astro'
 import Node from '../icons/Node.astro'
+import css from '../icons/Css.astro'
+import Webflow from '../icons/Webflow.astro'
+import Wordpress from '../icons/Wordpress.astro'
+import Gutenberg from '../icons/Gutenberg.astro'
 
 
 const TAGS = {
@@ -58,14 +62,42 @@ const TAGS = {
         class: 'bg-[#003159] text-white',
         icon: Node,
     },
+    CSS:{
+        name: 'CSS',
+        class: 'bg-[#003159] text-white',
+        icon: css,
+    },
+    WEBFLOW:{
+        name: 'Webflow',
+        class: 'bg-[#003159] text-white',
+        icon: Webflow,
+    },
+    WORDPRESS:{
+        name: 'WordPress',
+        class: 'bg-[#003159] text-white',
+        icon: Wordpress,
+    },
+    GUTENBERG:{
+        name: 'Gutenberg',
+        class: 'bg-[#003159] text-white',
+        icon: Gutenberg,
+    },
+
 }
 const PROJECTS = [
+    {
+        title:'UrbanNest – Luxury Real Estate',
+        description: 'UrbanNest is a premium landing page built for an elite real estate brokerage. Focused on high-fidelity visual layout execution, it features an advanced responsive grid system, tailored custom CSS for geographic map styling, and integrated lead acquisition workflows.',
+        link:'https://www.figma.com/proto/MVQFxD6Fwd7wNk1nW5XQIz/Untitled?node-id=2-2&p=f&t=60sMOW9Cqbab0TXe-1&scaling=min-zoom&content-scaling=fixed&page-id=0%3A1',
+        image: '/projects/urbannest.PNG',
+        tags: [TAGS.WORDPRESS, TAGS.GUTENBERG, TAGS.CSS]
+    },
     {
         title:'Cryptonium - Crypto Platform',
         description: 'Cryptonium is a crypto platform where users can safely buy and sell their cryptocurrencies and analyze markets. (developed in 4hrs)',
         link:'https://growmodo-e4e750.webflow.io',
         image: '/projects/crypto.jpeg',
-        tags: []
+        tags: [TAGS.WEBFLOW]
     },
     {
         title:'BlueBazaar - Ecommerce Platform',
