@@ -20,8 +20,9 @@ const { title, company, description, links, date } = Astro.props
   </div>
   <div class="relative flex flex-col gap-2 pb-4 text-gray-600 dark:text-gray-300 md:col-span-3">
     {description}
+    <p class="font-semibold text-l text-gray-600 dark:text-white mt-2">Selected work:</p>
+    <div class="flex flex-wrap gap-4 ">
     
-    <div class="flex flex-wrap gap-4 mt-2">
       {
         // Mapeamos el array de links para crear un botón por cada uno
         links && links.map((linkItem) => (
