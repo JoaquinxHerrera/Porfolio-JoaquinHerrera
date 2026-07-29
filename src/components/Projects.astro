@@ -14,6 +14,9 @@ import css from '../icons/Css.astro'
 import Webflow from '../icons/Webflow.astro'
 import Wordpress from '../icons/Wordpress.astro'
 import Gutenberg from '../icons/Gutenberg.astro'
+import N8N from '../icons/n8n.astro'
+import Html from '../icons/Html.astro'
+import Sheets from '../icons/sheets.astro'
 
 
 const TAGS = {
@@ -82,9 +85,32 @@ const TAGS = {
         class: 'bg-[#003159] text-white',
         icon: Gutenberg,
     },
+    N8N:{
+        name: 'N8N',
+        class: 'bg-[#003159] text-white',
+        icon: N8N,
+    },
+    HTML:{
+        name: 'HTML',
+        class: 'bg-[#003159] text-white',
+        icon: Html,
+    },
+    SHEETS:{
+        name: 'Sheets',
+        class: 'bg-[#003159] text-white',
+        icon: Sheets,
+    },
 
 }
 const PROJECTS = [
+    {
+        title:'Lead Intake Automation',
+        description: 'A lead capture system that connects a custom landing page with an n8n workflow. Form submissions are sent via HTTP POST, processed and structured in n8n, and automatically stored in Google Sheets for centralized lead management.',
+        link:'https://youtu.be/ZiKNdrl0m9c',
+        github: 'https://github.com/JoaquinxHerrera/BlueBazaar.git',
+        image: '/projects/n8n.png',
+        tags: [TAGS.HTML, TAGS.JAVASCRIPT, TAGS.CSS, TAGS.N8N, TAGS.SHEETS]
+    },
     {
         title:'UrbanNest – Luxury Real Estate',
         description: 'UrbanNest is a premium landing page built for an elite real estate brokerage. Focused on high-fidelity visual layout execution, it features an advanced responsive grid system, tailored custom CSS for geographic map styling, and integrated lead acquisition workflows.',
