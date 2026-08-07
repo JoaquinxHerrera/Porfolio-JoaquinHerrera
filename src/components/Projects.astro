@@ -17,6 +17,7 @@ import Gutenberg from '../icons/Gutenberg.astro'
 import N8N from '../icons/n8n.astro'
 import Html from '../icons/Html.astro'
 import Sheets from '../icons/sheets.astro'
+import Grok from '../icons/Grok.astro'
 
 
 const TAGS = {
@@ -100,9 +101,22 @@ const TAGS = {
         class: 'bg-[#003159] text-white',
         icon: Sheets,
     },
+    GROK:{
+        name: 'Grok',
+        class: 'bg-[#003159] text-white',
+        icon: Grok,
+    },
 
 }
 const PROJECTS = [
+    {
+        title:'AI SEO Audit Tool',
+        description: 'Automated SEO auditing tool that analyzes websites with AI, generates optimization reports, stores audit history in Google Sheets, and presents the results in a responsive frontend.',
+        link:'https://youtu.be/8Wcvt6K7JYw',
+        github: 'https://github.com/JoaquinxHerrera/ai-seo-audit-tool.git',
+        image: '/projects/n8n2.png',
+        tags: [TAGS.HTML, TAGS.JAVASCRIPT, TAGS.CSS, TAGS.N8N, TAGS.SHEETS, TAGS.GROK]
+    },
     {
         title:'AI Customer Feedback Automation',
         description: 'End-to-end customer feedback automation built with n8n. Submissions from a custom landing page are analyzed using Groq AI, automatically classified by sentiment, category, priority, and department, stored in Google Sheets, and escalated to Discord when high-priority issues are detected.',
