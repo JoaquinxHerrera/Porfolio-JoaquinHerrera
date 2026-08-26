@@ -18,6 +18,8 @@ import N8N from '../icons/n8n.astro'
 import Html from '../icons/Html.astro'
 import Sheets from '../icons/sheets.astro'
 import Grok from '../icons/Grok.astro'
+import Typescript from '../icons/Typescript.astro'
+import Supabase from '../icons/Supabase.astro'
 
 
 const TAGS = {
@@ -106,9 +108,27 @@ const TAGS = {
         class: 'bg-[#003159] text-white',
         icon: Grok,
     },
+    TYPESCRIPT:{
+        name: 'Typescript',
+        class: 'bg-[#003159] text-white',
+        icon: Typescript,
+    },
+    SUPABASE:{
+        name: 'Supabase',
+        class: 'bg-[#003159] text-white',
+        icon: Supabase,
+    },
 
 }
 const PROJECTS = [
+    {
+        title:'Customer Operations Dashboard',
+        description: 'Customer operations dashboard for managing customers, support tickets, and activity through a responsive interface connected to Supabase.',
+        link:'https://customer-operations-dashboard.vercel.app/',
+        github: 'https://github.com/JoaquinxHerrera/customer-operations-dashboard?utm_source=chatgpt.com',
+        image: '/projects/customerops.png',
+        tags: [TAGS.REACT, TAGS.TYPESCRIPT, TAGS.TAILWIND, TAGS.SUPABASE]
+    },
     {
         title:'AI SEO Audit Tool',
         description: 'Automated SEO auditing tool that analyzes websites with AI, generates optimization reports, stores audit history in Google Sheets, and presents the results in a responsive frontend.',
